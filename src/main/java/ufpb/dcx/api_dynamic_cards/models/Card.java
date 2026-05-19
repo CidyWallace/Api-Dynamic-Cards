@@ -13,7 +13,7 @@ public class Card {
     @Id
     private String id;
 
-    private String titulo;
+    private String title;
 
     @Column(name = "update_at", nullable = false)
     private LocalDateTime updateAt ;
@@ -31,8 +31,9 @@ public class Card {
     public Card() {
     }
 
-    public Card(String titulo, LocalDateTime updateAt, boolean deleted, List<SubItem> subItems) {
-        this.titulo = titulo;
+    public Card(String id, String title, LocalDateTime updateAt, boolean deleted, List<SubItem> subItems) {
+        this.id = id;
+        this.title = title;
         this.updateAt = updateAt;
         this.deleted = deleted;
         this.subItems = subItems;
@@ -42,12 +43,16 @@ public class Card {
         return id;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String titulo) {
+        this.title = titulo;
     }
 
     public LocalDateTime getUpdateAt() {

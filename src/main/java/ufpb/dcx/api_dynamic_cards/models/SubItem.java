@@ -34,20 +34,36 @@ public class SubItem {
     public SubItem() {
     }
 
-    public SubItem(String name, boolean isCounter, boolean marker, int current, int max, LocalDateTime updateAt, boolean deleted, double value,Card card) {
+    public SubItem(String id,String name, boolean isCounter, boolean marker, int current, int max, LocalDateTime updateAt, boolean deleted, double value,Card card) {
+        this.id = id;
         this.name = name;
         this.isCounter = isCounter;
         this.marker = marker;
         this.current = current;
         this.max = max;
-        this.updateAt = updateAt;
-        this.deleted = deleted;
         this.value = value;
-        this.card = card;
+        this.deleted = deleted;
+        this.updateAt = updateAt;
+    }
+
+    public SubItem(String id, String name, boolean counter, boolean marker, int current, int max, double value, boolean deleted, LocalDateTime updateAt) {
+        this.id = id;
+        this.name = name;
+        this.isCounter = counter;
+        this.marker = marker;
+        this.current = current;
+        this.max = max;
+        this.value = value;
+        this.deleted = deleted;
+        this.updateAt = updateAt;
     }
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public double getValue() {
@@ -99,5 +115,21 @@ public class SubItem {
     }
 
     public void setCard(Card card) {
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 }
